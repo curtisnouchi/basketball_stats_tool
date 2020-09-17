@@ -23,11 +23,11 @@ def print_team_stats():
     print('Teams:\n1) Panthers\n2) Bandits\n3) Warriors')
     while True:
         try:
-            team_input = input('Please enter your team: ')
-            if team_input != '1' and team_input != '2' and team_input != '3':
+            team_input = input('Please enter your team: (Enter Quit to exit)')
+            if team_input != '1' and team_input != '2' and team_input != '3' and team_input != 'Quit':
                 raise ValueError
         except ValueError as err:
-                print('Please enter 1, 2, or 3')
+                print('Please enter 1, 2, 3, or Quit')
                 print(err)
         if team_input == '1':
             print('\n')
@@ -55,6 +55,9 @@ def print_team_stats():
             player_names(team_warriors)
             print('\n')
             input('Please press Enter to continue...')
+        elif team_input == 'Quit':
+            print('Goodbye!')
+            break
             
 def main():
     print('BASKETBALL TEAM STATS TOOL\n\n----MENU----\n\nHere are your choices:\n\n1) Display Team Stats\n2) Quit')
@@ -68,6 +71,7 @@ def main():
             print ('Please enter 1 or 2...')
         if menu_input == '1':
             print_team_stats()
+            break
         elif menu_input == '2':
             print('==========\nThank you! Have a great day!')
             break  
